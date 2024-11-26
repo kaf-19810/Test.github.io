@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- 引入图标 -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+        
+        <title>大唐盛世家庭收支管理系统</title>
+    </head>
+
+    
+    <body background="./images/background2.jpg" width="100em" height="'100em" >
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <!-- logo -->
+                    <div class="logo">
+                        <img src="./images/永雏塔菲.jpg" alt="logo" width="140">
+                        <h2>管家婆</h2>
+                    </div>
+                    <!-- 关闭图标 -->
+                    <div class="close" id="close-btn">
+                        <span class="material-icons-sharp">close</span>
+                    </div>
+                </div>
+    
+                <div class="sidebar">
+                    <a href="./家庭成员管理.html">
+                        <span class="fa fa-address-book-o" style="font-size:24px"></span>
+                        <h3>家庭成员管理</h3>
+                    </a>
+                    <a href="./收支信息编辑.html">
+                        <span class="fa fa-money" style="font-size:24px"></span>
+                        <h3>收支信息编辑</h3>
+                    </a>
+                    <a href="./收支信息查询.html">
+                        <span class="fa fa-money" style="font-size:24px"></span>
+                        <h3>收支信息查询</h3>
+                    </a>
+                   
+                    <a href="#" class="active">
+                        <span class="fa fa-pie-chart" style="font-size:24px"></span>
+                        <h3>收支信息统计</h3>
+                    </a>
+                    <a href="./index.html">
+                        <span class="fa fa-external-link" style="font-size:24px"></span>
+                        <h3>返回主界面</h3>
+                    </a>
+                        
+    
+    
+                </div>
+            </aside>
+
+
+<!-- 下述部分仍在施工-->
+<main>
+    <h1>收支管理系统</h1>
+    <div class="date">
+
+        <body onload=getD1()>
+            <div id="datetime"></div>
+    </div>
+
+    <!--时钟显示-->
+
+    <div id="main"></div>
+
+    <script>
+        // 基于准备好的 DOM，初始化 ECharts 实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 图表的配置项
+        var option = {
+            title: {
+                text: 'ECharts 示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+
+    <!-- End of submit -->
+
+
+
+
+
+    <script src="./mock/mock.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!--时间显示-->
+<script>
+function getD1() {
+var date = new Date();
+var d1 = date.toLocaleString();
+document.getElementById("datetime").innerHTML = d1;
+}
+
+setInterval("getD1();", 1000);
+
+</script>
+
+<script>
+var rs = document.getElementsByName("typefunc"); //获取单选按钮组
+for (var i in rs) {
+rs[i].onclick = function () { //绑定click事件
+    var lab = this.parentNode; //获取label标签
+    var labs = lab.parentNode.childNodes; //获取同组的所有label标签
+    for (var j in labs) {
+        labs[j].className = "non"; //修改为未选中
+    }
+    lab.className = "checked"; //当前label修改为选中
+}
+}
+</script>
+
+
+<script>
+function btn1() {
+// 设置btn1点击之后会发生什么
+document.getElementById('show1').style.display = 'block';
+document.getElementById('show2').style.display = 'none';//暂时保留，到时候用来补充图标
+}
+
+function btn2() {
+// 这里就是跟btn1一样的意思 点击btn2之后show1会隐藏 同时show2显示
+document.getElementById('show1').style.display = 'none';
+document.getElementById('show2').style.display = 'block';//暂时保留，到时候用来补充图标
+}
+</script>
+
+
+
+

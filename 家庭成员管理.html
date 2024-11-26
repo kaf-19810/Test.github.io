@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- 引入图标 -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <title>大唐盛世家庭收支管理系统</title>
+    </head>
+
+    
+    <body background="./images/background2.jpg" width="100em" height="'100em" >
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <!-- logo -->
+                    <div class="logo">
+                        <img src="./images/永雏塔菲.jpg" alt="logo" width="140">
+                        <h2>管家婆</h2>
+                    </div>
+                    <!-- 关闭图标 -->
+                    <div class="close" id="close-btn">
+                        <span class="material-icons-sharp">close</span>
+                    </div>
+                </div>
+    
+                <div class="sidebar">
+                    <a href="#" class="active">
+                        <span class="fa fa-address-book-o" style="font-size:24px"></span>
+                        <h3>家庭成员管理</h3>
+                    </a>
+                    <a href="./收支信息编辑.html">
+                        <span class="fa fa-money" style="font-size:24px"></span>
+                        <h3>收支信息编辑</h3>
+                    </a>
+                   
+                    <a href="./收支信息查询.html">
+                        <span class="fa fa-pie-chart" style="font-size:24px"></span>
+                        <h3>收支信息查询</h3>
+                    </a>
+                    <a href="./收支信息统计.html">
+                        <span class="fa fa-pie-chart" style="font-size:24px"></span>
+                        <h3>收支信息统计</h3>
+                    </a>
+                    <a href="./index.html">
+                        <span class="fa fa-external-link" style="font-size:24px"></span>
+                        <h3>返回主界面</h3>
+                    </a>
+                        
+    
+    
+                </div>
+            </aside>
+    
+            <!--侧边栏选项-->
+    
+            <main>
+                <h1>收支管理系统</h1>
+                <div class="date">
+    
+                    <body onload=getD1()>
+                        <div id="datetime"></div>
+                </div>
+    
+                <!--时钟显示-->
+    
+                <form action="#">
+                    <div class="insights">
+                        <div class="dataname">
+                            <div class="middle">
+                            <!--<span class="material-icons-sharp">folder</span>-->
+                            <span class="fa fa-home" style="font-size:24px"></span>
+                            <h3>家庭信息管理</h3>
+                        </div>
+                         <div class="middle">
+                            <br><br><br>
+    
+                            <b>家庭成员编号：</b> <input class="name" type="text" name="dataname" placeholder="请输入家庭成员编号"><!--text处可能得接入接口-->
+    
+                        </div>
+                            <small class="text-muted"></small>
+                            <div class="middle">
+                                <br><br><br>
+    
+                                <b>家庭成员名称：</b> <input class="name" type="text" name="dataname" placeholder="请输入家庭成员名称">
+    
+                            </div>
+                            <small class="text-muted"></small>
+                            <button  type="submit" id="UpL" class="big">
+                                <strong>添加</strong>
+                            </button>
+                            <button  type="submit" id="UpL" class="big">
+                                <strong>删除</strong>
+                            </button>
+        
+                        </div>
+                        <!-- End of insights -->
+                    </form>
+                        </div>
+    
+                        
+                        <!-- 标注类型结束 -->
+    
+                        
+    
+                        <div class="boardupload" id="show2" style="display: none;">
+                            <span class="material-icons-sharp" style="float:left; margin-right: 20px;">bar_chart</span>
+                            <h3 style="float: left;">数据源</h3>
+                            <div>
+                                
+                                <button onclick="btn1()" style="float: left;margin-top: 10px;margin-left: 30px; border: 1px solid rgb(255, 255, 255);"
+                                    class="small" type="button"> 粘贴文字 </button>
+                                
+                                <button onclick="btn2()" style="float:left;margin-top: 10px;margin-left: 60px; border: 2px solid rgb(166, 166, 255);"
+                                    class="small" type="button"> <b>上传文件</b></button>
+                            </div>
+    
+                            
+                            <form id="addFile" method="post" enctype="multipart/form-data">
+                                <label style=" float: left ;align-items: center; height: 30px; width: 500px; margin-top: 10px; margin-right:0px;background-color: rgba(250, 235, 215, 0.788);">
+                                    <input type="file" name="content" id="fileInput" style=" height: 30px;">
+                                    <script src="upload.js"></script>
+                                </label>
+                                
+                            </form>
+                        </div>
+    
+                        <!-- End of 数据源 -->
+    
+    
+    
+                        
+    
+                    </div>
+                    <!-- End of insights -->
+                </form>
+    
+    
+                <!-- End of submit -->
+    
+    
+    
+    
+    
+                <script src="./mock/mock.js"></script>
+                <script src="./js/index.js"></script>
+    
+    </body>
+    
+    </html>
+    
+    
+    
+    <!--时间显示-->
+    <script>
+        function getD1() {
+            var date = new Date();
+            var d1 = date.toLocaleString();
+            document.getElementById("datetime").innerHTML = d1;
+        }
+    
+        setInterval("getD1();", 1000);
+    
+    </script>
+    
+    <script>
+        var rs = document.getElementsByName("typefunc"); //获取单选按钮组
+        for (var i in rs) {
+            rs[i].onclick = function () { //绑定click事件
+                var lab = this.parentNode; //获取label标签
+                var labs = lab.parentNode.childNodes; //获取同组的所有label标签
+                for (var j in labs) {
+                    labs[j].className = "non"; //修改为未选中
+                }
+                lab.className = "checked"; //当前label修改为选中
+            }
+        }
+    </script>
+    
+    
+    <script>
+        function btn1() {
+            // 设置btn1点击之后会发生什么
+            document.getElementById('show1').style.display = 'block';
+            document.getElementById('show2').style.display = 'none';//暂时保留，到时候用来补充图标
+        }
+    
+        function btn2() {
+            // 这里就是跟btn1一样的意思 点击btn2之后show1会隐藏 同时show2显示
+            document.getElementById('show1').style.display = 'none';
+            document.getElementById('show2').style.display = 'block';//暂时保留，到时候用来补充图标
+        }
+    </script>
+    
+    
+
+
