@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="css/index.css" />
+      
+  </head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <h1>电影数据可视化</h1>
+      <div class="show-time"></div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".show-time").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "日-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+
+    <!-- 页面主体 -->
+    <section class="mainbox">
+      <!-- 左侧盒子 -->
+      <div class="column">
+        <div class="panel bar">
+          <h2>国内电影类型涉猎展示</h2>
+          <a style="text-align:center" href="stastic1.html">
+            <div class="chart"></div>
+          </a>
+          <div class="panel-footer"></div>
+        </div>
+        
+        
+        
+        <div class="panel line">
+          <h2>电影类型数量统计
+          </h2>
+          <a style="text-align:center" href="stastic3.html">
+            <div class="chart"></div>          
+          </a>
+          <div class="panel-footer"></div>
+
+        </div>
+        <div class="panel pie">
+          <h2>评分-票房关系散点图</h2>
+        <a style="text-align:center" href="stastic5.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <!-- 中间盒子 -->
+      <div class="column">
+        <!-- 头部 no模块 -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>1242.74</li>
+              <li>1070</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>四年票房总量（亿人民币）</li>
+              <li>统计电影数量</li>
+            </ul>
+          </div>
+        
+        </div>
+        <br>
+        <div class="no">
+          <h1><font style="text-align:center" color="white">如何查看图表分析</font></h1>
+          <br>
+          <a>
+            <font color="white">
+              点击对应图表即可查看对应的分析内容哦
+                        <br>
+            </font>
+          </a>
+          </div>
+ <br>
+        <div class="no">
+          <h1><font color="white">近四年各季度票房统计（单位：亿人民币）</font></h1>
+          <br>
+          <a>
+            <font color="white">
+                1.2019年全球疫情的影响，全球电影市场都较为低迷，2020年之后开始迅速增加并保持较高票房; <br><br>
+                2.19年过后市场总体呈增长趋势<br><br>
+                3.亚洲与美洲市场的票房多集中在二三季度。<br><br>
+                4.欧洲市场相比亚美比较颓势<br><br>
+            </font>
+          </a>
+          </div>
+          <br>
+        
+        </div>
+      
+      </div>
+      <!-- 右侧盒子 -->
+      <div class="column">
+        <div class="panel bar2">
+          <h2>地区-类型评分热力图</h2>
+          <a style="text-align:center" href="stastic2.html">
+          <div class="chart"></div>
+          </a>
+          <div class="panel-footer"></div>
+        </div>
+      
+        <div class="panel line2">
+          <h2>近四年各季度票房统计（单位：亿人民币）</h2>
+        <a style="text-align:center" href="stastic4.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h2>各大洲票房占比饼图</h2>
+        <a style="text-align:center" href="stastic6.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- 引入china.js 完成地图模块 -->
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

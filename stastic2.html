@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="css/index.css" />
+      
+  </head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <h1>电影数据可视化</h1>
+      <div class="show-time"></div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".show-time").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "日-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+
+    <!-- 页面主体 -->
+    <section class="mainbox">
+      <!-- 左侧盒子 -->
+      <div class="column">
+        <div class="panel bar">
+          <h2>国内电影类型涉猎展示</h2>
+          <a style="text-align:center" href="stastic1.html">
+            <div class="chart"></div>
+          </a>
+          <div class="panel-footer"></div>
+        </div>
+        
+        
+        
+        <div class="panel line">
+          <h2>电影类型数量统计
+          </h2>
+          <a style="text-align:center" href="stastic3.html">
+            <div class="chart"></div>          
+          </a>
+          <div class="panel-footer"></div>
+
+        </div>
+        <div class="panel pie">
+          <h2>评分-票房关系散点图</h2>
+        <a style="text-align:center" href="stastic5.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <!-- 中间盒子 -->
+      <div class="column">
+        <!-- 头部 no模块 -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>1242.74</li>
+              <li>1070</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>四年票房总量（亿人民币）</li>
+              <li>统计电影数量</li>
+            </ul>
+          </div>
+        
+        </div>
+        <br>
+        <div class="no">
+          <h1><font style="text-align:center" color="white">如何查看图表分析</font></h1>
+          <br>
+          <a>
+            <font color="white">
+              点击对应图表即可查看对应的分析内容哦
+                        <br>
+            </font>
+          </a>
+          </div>
+ <br>
+        <div class="no">
+          <h1><font color="white">地区-类型评分热力图</font></h1>
+          <br>
+          <a>
+            <font color="white">
+                <h2>中国电影类型优势</h2>
+            <br><br>
+                中国电影在多个类型中展现出显著优势。在喜剧片和动作片领域，中国分别以8.7和8.8的评分领先，显示出其在这些类型上的制作实力和观众喜爱度。<br>动画片和爱情片的评分更是高达9.4和9.2，这不仅反映了中国电影在创意和技术上的成就，也显示了其在情感表达和故事叙述上的能力。
+                <br><br><br>
+                <h2>美国电影类型表现</h2>
+                <br><br>
+                美国电影在动作片和犯罪片中表现突出，评分分别为8.6和8.1，这表明美国在这些领域的制作实力和创新能力。<br>美国的动作片以其精彩的打斗场面和紧张的剧情吸引观众，而犯罪片则以其复杂的情节和深刻的社会意义获得认可。<br>
+                <br><br>
+                <h2>其他国家电影类型特点</h2>
+                <br><br>
+                其他国家在特定电影类型中也有其特点。例如，日本在动画片领域与美国并列第二，评分为9分，显示出其在动画制作上的高水平。<br>英国在所有类型的电影中评分相对较低，可能需要在电影制作上进行更多的创新和提升。<br>俄罗斯在喜剧片和动作片领域表现良好，而德国在动作片和动画片领域表现稳定，但在爱情片领域有提升空间。这反映了各国电影产业的多样性和各自的优势领域<br>
+            </font>
+          </a>
+          </div>
+          <br>
+        </div>
+      
+      </div>
+      <!-- 右侧盒子 -->
+      <div class="column">
+        <div class="panel bar2">
+          <h2>地区-类型评分热力图</h2>
+          <a style="text-align:center" href="stastic2.html">
+          <div class="chart"></div>
+          </a>
+          <div class="panel-footer"></div>
+        </div>
+      
+        <div class="panel line2">
+          <h2>近四年各季度票房统计（单位：亿人民币）</h2>
+        <a style="text-align:center" href="stastic4.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h2>各大洲票房占比饼图</h2>
+        <a style="text-align:center" href="stastic6.html">
+          <div class="chart"></div>
+        </a>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- 引入china.js 完成地图模块 -->
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
